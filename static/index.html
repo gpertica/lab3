@@ -85,5 +85,21 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/introHCI.js"></script>
 </body>
 </html>
+
+function initializePage() {
+   ...
+    $("#submitBtn").click(updateProject); 
+}
+
+function updateProject(e) {
+   var projectID = $('#project').val();
+   $(projectID).animate({
+      width: $('#width').val()
+   });
+
+   var newText = $('#description').val();
+   $(projectID + " .project-description").text(newText);
+}
